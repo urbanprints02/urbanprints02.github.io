@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NextGen Store</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="vikas.css">
 </head>
 <body>
 
@@ -97,6 +97,48 @@
 <div class="grid" id="productGrid"></div>
 </section>
 
+
+
+
+
+
+
+
+<!-- PRODUCT DETAIL MODAL -->
+<div id="productModal" class="product-modal">
+  <div class="modal-content">
+
+    <span class="close-btn" onclick="closeModal()">X</span>
+
+    <div class="modal-img">
+      <img id="modalImg">
+    </div>
+
+    <div class="modal-info">
+      <h2 id="modalName"></h2>
+      <div id="modalRating"></div>
+      <h3 id="modalPrice"></h3>
+
+      <p class="modal-desc">
+        Premium quality custom printed product.
+        Perfect for branding, gifting, and personal style.
+      </p>
+
+      <button id="modalAddBtn">Add to Cart</button>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
 <footer class="site-footer">
   <div class="footer-container">
     <div class="footer-box">
@@ -173,9 +215,9 @@ items.forEach((p, index) => {
  div.innerHTML = `
   <div class="product-badge">50% OFF</div>
 
-  <div class="product-img">
-    <img src="${p[2]}" alt="${p[0]}">
-  </div>
+ <div class="product-img" onclick="openProduct('${p[0]}',${p[1]},'${p[2]}','${stars}',${rating})">
+<img src="${p[2]}" alt="${p[0]}">
+</div>
 
   <div class="product-details">
     <h4>${p[0]}</h4>
@@ -229,6 +271,33 @@ slides[i].classList.remove("active");
 i=(i+1)%slides.length;
 slides[i].classList.add("active");
 },3500);
+
+
+
+
+
+
+
+    function openProduct(name, price, img, stars, rating){
+
+document.getElementById("productModal").style.display = "flex";
+
+document.getElementById("modalName").innerText = name;
+document.getElementById("modalPrice").innerText = "₹" + price;
+document.getElementById("modalImg").src = img;
+
+document.getElementById("modalRating").innerHTML =
+`<span style="color:gold">${stars}</span> (${rating})`;
+
+document.getElementById("modalAddBtn").onclick = function(){
+addToCart(name,price,this);
+};
+
+}
+
+function closeModal(){
+document.getElementById("productModal").style.display = "none";
+}
 </script>
 
 </body>
