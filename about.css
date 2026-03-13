@@ -1,0 +1,207 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* Section Header */
+.about-section h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #222;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    text-align: center;
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+/* Layout Grid */
+.content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+}
+
+.text-content h2 {
+    color: #000;
+    border-left: 4px solid #333;
+    padding-left: 15px;
+    margin-top: 30px;
+}
+
+.text-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.text-content li {
+    background: #fff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Sidebar Box */
+.contact-box {
+    background: #222;
+    color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    height: fit-content;
+    text-align: center;
+}
+
+.contact-box h3 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.btn {
+    display: inline-block;
+    background: #fff;
+    color: #222;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Navbar Styling */
+.navbar {
+    background: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #000;
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover, .nav-menu a.active {
+    color: #000;
+    border-bottom: 2px solid #000;
+}
+
+.nav-btn {
+    background: #000;
+    color: #fff !important;
+    padding: 8px 20px;
+    border-radius: 5px;
+}
+
+.nav-btn:hover {
+    background: #333;
+    border: none !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .nav-menu { gap: 15px; }
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Button Styles */
+.btn-call, .btn-whatsapp, .btn-submit {
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn-call { background: #007bff; color: white; }
+.btn-whatsapp { background: #25d366; color: white; }
+.btn-submit { background: #000; color: white; border: none; cursor: pointer; width: 100%; }
+
+.btn-call:hover { background: #0056b3; }
+.btn-whatsapp:hover { background: #1ebe57; }
+
+/* Form Styling */
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .contact-grid { grid-template-columns: 1fr; }
+}
+
+.btn:hover {
+    background: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
