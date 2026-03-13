@@ -1,6 +1,6 @@
   /* ================= RESET ================= */
 * {
-  margin: 0;
+  margin: 2px;
   padding: 0;
   box-sizing: border-box;
   font-family: "Inter", "Segoe UI", sans-serif;
@@ -79,11 +79,11 @@ cursor:pointer;
 
 .close-btn{
 position:absolute;
-top:20px;
-right:30px;
+top:100px;
+right:60px;
 font-size:25px;
 cursor:pointer;
-color:white;
+color:red;
 }
 
 
