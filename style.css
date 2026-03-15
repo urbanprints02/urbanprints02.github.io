@@ -350,6 +350,7 @@ marquee {
 }
 /* ================= FOOTER ================= */
 .site-footer {
+  width:100%;
   background: #131921;
   color: #ddd;
   padding: 40px 30px 20px;
