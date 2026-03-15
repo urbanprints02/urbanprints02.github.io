@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NextGen Store</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">Logo<span>.in</span></div>
+  <input id="searchInput" placeholder="Search products..." onkeyup="searchProducts()">
+  <a href="cart.html" class="nav-cart">🛒 <span id="cart-count">0</span></a>
+</header>
+
+
+<header class="nav">
+   <a href="index.html">Clothing</a>
+  <a href="accessories.html">Accessories</a>
+  <a href="collection.html">Our Collection</a>
+  <a href="rowmaterial.html">Row Material</a>
+</header>
+
+<marquee>
+  <span style="margin-right:150px;color:red">🔥Big sale today🔥</span>
+  <span style="margin-right:150px;color:blue">🎉India's biggest Logo Maker Platform🎉</span>
+  <span style="margin-right:150px;color:orange">🤑50% Discount🤑</span>
+  <span style="margin-right:150px;color:black">All India COD Available🌏</span>
+</marquee>
+
+<section class="slider">
+
+
+     <div class="slide active">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEn52Wc5MYzlJ9ixd7tk6I74aoO7TTesGHEg&s">
+    <div class="caption">LOGO MAKE IN YOUR WAY</div>
+  </div>
+
+     <div class="slide active">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYc_wz-X3TveHf9xyXp4cJPpYUYKVl8aLZ1A&s">
+    <div class="caption">LOGO MAKE IN YOUR WAY</div>
+  </div>
+
+     <div class="slide active">
+    <img src="https://cms.cloudinary.vpsvc.com/image/upload/if_ar_gt_1.1/c_scale,t_pdpHeroGallery_Gallery/if_else/c_scale,w_816/if_end/f_auto,q_auto:best,dpr_1.0/India%20LOB/Caps/Printed%20Caps/IN_Printed-Caps-Front_02">
+    <div class="caption">LOGO MAKE IN YOUR WAY</div>
+  </div>
+
+
+
+
+  <div class="slide">
+    <img src="https://printsuperstar.com/cdn/shop/collections/Screenshot_2024-01-23_at_12.06.00.png?v=1707483619&width=750">
+    <div class="caption">LOGO ANYWHERE</div>
+  </div>
+  <button  class="slider-shop-btn" onclick="scrollToProducts()" style="background-color:white;">Enquire for bulk quantity</button>
+</section>
+
+<section id="productContainer" class="products">
+<h2>🔥 IN YOUR STYLE</h2>
+<div class="grid" id="productGrid"></div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-box">
+      <h3>About NextGen Store</h3>
+      <p>NextGen Store is India’s growing online shopping platform.</p>
+    </div>
+    <div class="footer-box">
+      <h3>Contact Us</h3>
+      <p>📍 Sonipat, Haryana</p>
+      <p>📞 +91 22222222222</p>
+      <p>📧 urbanprints@gmail.com</p>
+    </div>
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+      </ul>
+    </div>
+    <div class="footer-box">
+      <h3>Follow Us</h3>
+      <div class="social-links">
+       <a href="https://wa.me/message/7JO4LKER7DJSK1">Whatsapp</a>
+           <a href="https://youtube.com/@urbanprint.attire?si=tyHk4YVnBEmaBC1k">Youtube</a>
+        <a href="https://www.instagram.com/urban__printss?igsh=ZzY4M255aTJyaTEx&utm_source=qr">Instagram</a>
+        <a href="#">Facebook</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 NextGen Store</div>
+</footer>
+
+<script>
+const items = [
+
+    ["Printed ", 200,"https://cms.cloudinary.vpsvc.com/image/upload/if_ar_gt_1.1/c_scale,t_pdpHeroGallery_Gallery/if_else/c_scale,w_816/if_end/f_auto,q_auto:best,dpr_1.0/India%20LOB/Caps/Printed%20Caps/IN_Printed-Caps-Front_Back_01"],
+    ["Printed ", 200,"https://cms.cloudinary.vpsvc.com/image/upload/if_ar_gt_1.1/c_scale,t_pdpHeroGallery_Gallery/if_else/c_scale,w_816/if_end/f_auto,q_auto:best,dpr_1.0/India%20LOB/Caps/Printed%20Caps/IN_Printed-Caps-Back_01"],
+      ["Printed ", 200,"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYc_wz-X3TveHf9xyXp4cJPpYUYKVl8aLZ1A&s"],
+        ["Printed ", 200,"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEn52Wc5MYzlJ9ixd7tk6I74aoO7TTesGHEg&s"],
+          ["Printed ", 200,""],
+            ["Printed ", 200,""],
+              ["Printed ", 200,""],
+                ["Printed ", 200,""],
+
+];
+
+const grid = document.getElementById("productGrid");
+
+items.forEach((p, index) => {
+
+  /* 🔥 PERFECT COLLAGE PATTERN */
+  const cycle = index % 8;
+  const isBig =
+    cycle === 3 || cycle === 4;
+
+  const div = document.createElement("div");
+  div.className = isBig ? "product big" : "product";
+
+  let rating = (Math.random() * (5 - 3.6) + 3.6).toFixed(1);
+  let stars = "★★★★★".slice(0, Math.round(rating));
+
+ div.innerHTML = `
+  <div class="product-badge">50% OFF</div>
+
+  <div class="product-img">
+    <img src="${p[2]}" alt="${p[0]}">
+  </div>
+
+  <div class="product-details">
+    <h4>${p[0]}</h4>
+
+    <div class="rating">
+      <span class="stars">${stars}</span>
+      <span class="rating-number">${rating}</span>
+    </div>
+
+    <div class="price">₹${p[1]}</div>
+
+    <button onclick="addToCart('${p[0]}',${p[1]},this)">Add</button>
+  </div>
+`;
+
+  grid.appendChild(div);
+});
+
+/* CART + SEARCH + SLIDER (UNCHANGED) */
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addToCart(name, price, btn){
+  let item = cart.find(i=>i.name===name);
+  item ? item.qty++ : cart.push({name,price,qty:1});
+  localStorage.setItem("cart",JSON.stringify(cart));
+  updateCartCount();
+  btn.innerText="Added ✓";
+  setTimeout(()=>btn.innerText="Add",700);
+}
+
+function updateCartCount(){
+  document.getElementById("cart-count").innerText =
+  cart.reduce((s,i)=>s+i.qty,0);
+}
+updateCartCount();
+
+function searchProducts(){
+  let v=searchInput.value.toLowerCase();
+  document.querySelectorAll(".product").forEach(p=>{
+    p.style.display=p.innerText.toLowerCase().includes(v)?"flex":"none";
+  });
+}
+
+function scrollToProducts(){
+  productContainer.scrollIntoView({behavior:"smooth"});
+}
+
+let slides=document.querySelectorAll(".slide"),i=0;
+setInterval(()=>{
+slides[i].classList.remove("active");
+i=(i+1)%slides.length;
+slides[i].classList.add("active");
+},3500);
+</script>
+
+</body>
+</html>
