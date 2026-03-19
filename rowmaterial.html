@@ -9,6 +9,9 @@
 </head>
 <body>
 
+
+
+
 <header class="navbar">
   <div class="logo">Logo<span>.in</span></div>
   <input id="searchInput" placeholder="Search products..." onkeyup="searchProducts()">
@@ -16,12 +19,13 @@
 </header>
 
 
-<header class="nav">
+<div class="nav">
    <a href="index.html">Clothing</a>
   <a href="accessories.html">Accessories</a>
-  <a href="collection.html">Collection</a>
-  <a href="rowmaterial.html">Material</a>
-</header>
+  <a href="collection.html">Our Collection</a>
+  <a href="rowmaterial.html">Row Material</a>
+</div>
+
 
 <marquee>
   <span style="margin-right:150px;color:red">🔥Big sale today🔥</span>
@@ -38,15 +42,34 @@
 
 
      <div class="slide active">
-    <img src="https://5.imimg.com/data5/MK/ME/MY-36714677/sublimation-raw-material.jpg">
+    <img src="image31.jpeg">
     <div class="caption">LOGO MAKE IN YOUR WAY</div>
   </div>
 
      <div class="slide active">
-    <img src="https://5.imimg.com/data5/ANDROID/Default/2023/9/340725040/YR/JE/WI/196881238/product-jpeg-500x500.jpg">
+    <img src="image32.jpeg">
     <div class="caption">LOGO MAKE IN YOUR WAY</div>
   </div>
 
+     <div class="slide active">
+    <img src="image33.jpeg">
+    <div class="caption">LOGO MAKE IN YOUR WAY</div>
+  </div>
+
+     <div class="slide active">
+    <img src="image34.jpeg">
+    <div class="caption">LOGO MAKE IN YOUR WAY</div>
+  </div>
+
+     <div class="slide active">
+    <img src="image35.jpeg">
+    <div class="caption">LOGO MAKE IN YOUR WAY</div>
+  </div>
+
+     <div class="slide active">
+    <img src="image36.jpeg">
+    <div class="caption">LOGO MAKE IN YOUR WAY</div>
+  </div>
 
 
 
@@ -62,17 +85,59 @@
 <div class="grid" id="productGrid"></div>
 </section>
 
+
+
+
+
+
+
+
+<!-- PRODUCT DETAIL MODAL -->
+<div id="productModal" class="product-modal">
+  <div class="modal-content">
+
+    <span class="close-btn" onclick="closeModal()">Close</span>
+
+    <div class="modal-img">
+      <img id="modalImg">
+    </div>
+
+    <div class="modal-info">
+      <h2 id="modalName"></h2>
+      <div id="modalRating"></div>
+      <h3 id="modalPrice"></h3>
+
+      <p class="modal-desc">
+        Premium quality custom printed product.
+        Perfect for branding, gifting, and personal style.
+      </p>
+
+      <button id="modalAddBtn">Add to Cart</button>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
 <footer class="site-footer">
   <div class="footer-container">
     <div class="footer-box">
       <h3>About NextGen Store</h3>
       <p>NextGen Store is India’s growing online shopping platform.</p>
     </div>
-   
+
     <div class="footer-box">
       <h3>Quick Links</h3>
       <ul>
-        <li><a href="#">About</a></li>
+        <li><a href="About.html">About</a></li>
         <li><a href="#">Privacy</a></li>
         <li><a href="#">Terms</a></li>
       </ul>
@@ -80,7 +145,7 @@
     <div class="footer-box">
       <h3>Follow Us</h3>
       <div class="social-links">
-        <a href="https://wa.me/message/7JO4LKER7DJSK1">Whatsapp</a>
+           <a href="https://wa.me/message/7JO4LKER7DJSK1">Whatsapp</a>
            <a href="https://youtube.com/@urbanprint.attire?si=tyHk4YVnBEmaBC1k">Youtube</a>
         <a href="https://www.instagram.com/urban__printss?igsh=ZzY4M255aTJyaTEx&utm_source=qr">Instagram</a>
         <a href="#">Facebook</a>
@@ -92,9 +157,16 @@
 
 <script>
 const items = [
+    ["Row material",200, "rowm1.jpeg"],
+    ["Row material",200, "rowm2.jpeg"],
+    ["Row material",200, "rowm3.jpeg"],
+    ["Row material",200, "rowm4.jpeg"],
+    ["Row material",200, "rowm5.jpeg"],
+    ["Row material",200, "rowm6.jpeg"],
+    ["Row material",200, "rowm7.jpeg"],
 
-    ["Printed ", 200,"https://5.imimg.com/data5/ANDROID/Default/2023/9/340725040/YR/JE/WI/196881238/product-jpeg-500x500.jpg"],
-    ["Printed ", 200,"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbZvX-yws7huB7CpxWG6d68KZ5Ex-ijeQ8qQ&s"],
+
+
 
 ];
 
@@ -116,9 +188,9 @@ items.forEach((p, index) => {
  div.innerHTML = `
   <div class="product-badge">50% OFF</div>
 
-  <div class="product-img">
-    <img src="${p[2]}" alt="${p[0]}">
-  </div>
+ <div class="product-img" onclick="openProduct('${p[0]}',${p[1]},'${p[2]}','${stars}',${rating})">
+<img src="${p[2]}" alt="${p[0]}">
+</div>
 
   <div class="product-details">
     <h4>${p[0]}</h4>
@@ -172,6 +244,33 @@ slides[i].classList.remove("active");
 i=(i+1)%slides.length;
 slides[i].classList.add("active");
 },3500);
+
+
+
+
+
+
+
+    function openProduct(name, price, img, stars, rating){
+
+document.getElementById("productModal").style.display = "flex";
+
+document.getElementById("modalName").innerText = name;
+document.getElementById("modalPrice").innerText = "₹" + price;
+document.getElementById("modalImg").src = img;
+
+document.getElementById("modalRating").innerHTML =
+`<span style="color:gold">${stars}</span> (${rating})`;
+
+document.getElementById("modalAddBtn").onclick = function(){
+addToCart(name,price,this);
+};
+
+}
+
+function closeModal(){
+document.getElementById("productModal").style.display = "none";
+}
 </script>
 
 </body>
