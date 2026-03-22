@@ -9,6 +9,9 @@
 </head>
 <body>
 
+
+
+
 <header class="navbar">
   <div class="logo">Logo<span>.in</span></div>
   <input id="searchInput" placeholder="Search products..." onkeyup="searchProducts()">
@@ -16,43 +19,84 @@
 </header>
 
 
-<header class="nav">
+<div class="nav">
    <a href="index.html">Clothing</a>
   <a href="accessories.html">Accessories</a>
-  <a href="collection.html">Collection</a>
-  <a href="rowmaterial.html">Material</a>
-</header>
+  <a href="collection.html">Our Collection</a>
+  <a href="rowmaterial.html">Row Material</a>
+</div>
+
 
 <marquee>
-  <span style="margin-right:150px;color:red">🔥Big sale today🔥</span>
+   <span style="margin-right:150px;color:red">🔥Big sale today🔥</span>
   <span style="margin-right:150px;color:blue">🎉India's biggest Logo Maker Platform🎉</span>
   <span style="margin-right:150px;color:orange">🤑50% Discount🤑</span>
-  <span style="margin-right:150px;color:black">All India COD Available🌏</span>
+  <span style="margin-right:150px;color:black">Same day Delivery 📦 Delhi 🌏</span>
+    <span style="margin-right:150px;color:black"> Printing on any Fabric and Material available 🌏</span>
 </marquee>
 
 <section class="slider">
 
 
      <div class="slide active">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEn52Wc5MYzlJ9ixd7tk6I74aoO7TTesGHEg&s">
+    <img src="slide3.jpeg">
+    <div class="caption">LOGO MAKE IN YOUR WAY</div>
+  </div>
+
+
+     <div class="slide active">
+    <img src="slide4.jpeg">
+    <div class="caption">LOGO MAKE IN YOUR WAY</div>
+  </div>
+
+
+
+
+     <div class="slide active">
+    <img src="image31.jpeg">
     <div class="caption">LOGO MAKE IN YOUR WAY</div>
   </div>
 
      <div class="slide active">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYc_wz-X3TveHf9xyXp4cJPpYUYKVl8aLZ1A&s">
+    <img src="image32.jpeg">
     <div class="caption">LOGO MAKE IN YOUR WAY</div>
   </div>
 
      <div class="slide active">
-    <img src="https://cms.cloudinary.vpsvc.com/image/upload/if_ar_gt_1.1/c_scale,t_pdpHeroGallery_Gallery/if_else/c_scale,w_816/if_end/f_auto,q_auto:best,dpr_1.0/India%20LOB/Caps/Printed%20Caps/IN_Printed-Caps-Front_02">
+    <img src="image33.jpeg">
+    <div class="caption">LOGO MAKE IN YOUR WAY</div>
+  </div>
+
+     <div class="slide active">
+    <img src="image34.jpeg">
+    <div class="caption">LOGO MAKE IN YOUR WAY</div>
+  </div>
+
+     <div class="slide active">
+    <img src="image35.jpeg">
+    <div class="caption">LOGO MAKE IN YOUR WAY</div>
+  </div>
+
+     <div class="slide active">
+    <img src="image36.jpeg">
     <div class="caption">LOGO MAKE IN YOUR WAY</div>
   </div>
 
 
+
+     <div class="slide active">
+    <img src="slide2.jpeg">
+    <div class="caption">LOGO MAKE IN YOUR WAY</div>
+  </div>
+
+     <div class="slide active">
+    <img src="slide1.jpeg">
+    <div class="caption">LOGO MAKE IN YOUR WAY</div>
+  </div>
 
 
   <div class="slide">
-    <img src="https://printsuperstar.com/cdn/shop/collections/Screenshot_2024-01-23_at_12.06.00.png?v=1707483619&width=750">
+    <img src="slide2.jpeg">
     <div class="caption">LOGO ANYWHERE</div>
   </div>
   <button  class="slider-shop-btn" onclick="scrollToProducts()" style="background-color:white;">Enquire for bulk quantity</button>
@@ -63,17 +107,59 @@
 <div class="grid" id="productGrid"></div>
 </section>
 
+
+
+
+
+
+
+
+<!-- PRODUCT DETAIL MODAL -->
+<div id="productModal" class="product-modal">
+  <div class="modal-content">
+
+    <span class="close-btn" onclick="closeModal()">Close</span>
+
+    <div class="modal-img">
+      <img id="modalImg">
+    </div>
+
+    <div class="modal-info">
+      <h2 id="modalName"></h2>
+      <div id="modalRating"></div>
+      <h3 id="modalPrice"></h3>
+
+      <p class="modal-desc">
+        Premium quality custom printed product.
+        Perfect for branding, gifting, and personal style.
+      </p>
+
+      <button id="modalAddBtn">Add to Cart</button>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
 <footer class="site-footer">
   <div class="footer-container">
     <div class="footer-box">
       <h3>About NextGen Store</h3>
       <p>NextGen Store is India’s growing online shopping platform.</p>
     </div>
-   
+
     <div class="footer-box">
       <h3>Quick Links</h3>
       <ul>
-        <li><a href="#">About</a></li>
+        <li><a href="About.html">About</a></li>
         <li><a href="#">Privacy</a></li>
         <li><a href="#">Terms</a></li>
       </ul>
@@ -81,7 +167,7 @@
     <div class="footer-box">
       <h3>Follow Us</h3>
       <div class="social-links">
-       <a href="https://wa.me/message/7JO4LKER7DJSK1">Whatsapp</a>
+           <a href="https://wa.me/message/7JO4LKER7DJSK1">Whatsapp</a>
            <a href="https://youtube.com/@urbanprint.attire?si=tyHk4YVnBEmaBC1k">Youtube</a>
         <a href="https://www.instagram.com/urban__printss?igsh=ZzY4M255aTJyaTEx&utm_source=qr">Instagram</a>
         <a href="#">Facebook</a>
@@ -93,15 +179,13 @@
 
 <script>
 const items = [
+    ["Printed Tshirt",200, "access1.jpeg"],
+    ["Printed Tshirt",200, "access2.jpeg"],
+    ["Printed Tshirt",200, "access3.PNG"],
+    ["Printed Tshirt",200, "access11.jpg"],
+    ["Printed Tshirt",200, "access12.jpg"],
+    ["Printed Tshirt",200, "access13.jpg"],
 
-    ["Printed ", 200,"https://cms.cloudinary.vpsvc.com/image/upload/if_ar_gt_1.1/c_scale,t_pdpHeroGallery_Gallery/if_else/c_scale,w_816/if_end/f_auto,q_auto:best,dpr_1.0/India%20LOB/Caps/Printed%20Caps/IN_Printed-Caps-Front_Back_01"],
-    ["Printed ", 200,"https://cms.cloudinary.vpsvc.com/image/upload/if_ar_gt_1.1/c_scale,t_pdpHeroGallery_Gallery/if_else/c_scale,w_816/if_end/f_auto,q_auto:best,dpr_1.0/India%20LOB/Caps/Printed%20Caps/IN_Printed-Caps-Back_01"],
-      ["Printed ", 200,"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYc_wz-X3TveHf9xyXp4cJPpYUYKVl8aLZ1A&s"],
-        ["Printed ", 200,"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEn52Wc5MYzlJ9ixd7tk6I74aoO7TTesGHEg&s"],
-          ["Printed ", 200,""],
-            ["Printed ", 200,""],
-              ["Printed ", 200,""],
-                ["Printed ", 200,""],
 
 ];
 
@@ -123,9 +207,9 @@ items.forEach((p, index) => {
  div.innerHTML = `
   <div class="product-badge">50% OFF</div>
 
-  <div class="product-img">
-    <img src="${p[2]}" alt="${p[0]}">
-  </div>
+ <div class="product-img" onclick="openProduct('${p[0]}',${p[1]},'${p[2]}','${stars}',${rating})">
+<img src="${p[2]}" alt="${p[0]}">
+</div>
 
   <div class="product-details">
     <h4>${p[0]}</h4>
@@ -179,6 +263,33 @@ slides[i].classList.remove("active");
 i=(i+1)%slides.length;
 slides[i].classList.add("active");
 },3500);
+
+
+
+
+
+
+
+    function openProduct(name, price, img, stars, rating){
+
+document.getElementById("productModal").style.display = "flex";
+
+document.getElementById("modalName").innerText = name;
+document.getElementById("modalPrice").innerText = "₹" + price;
+document.getElementById("modalImg").src = img;
+
+document.getElementById("modalRating").innerHTML =
+`<span style="color:gold">${stars}</span> (${rating})`;
+
+document.getElementById("modalAddBtn").onclick = function(){
+addToCart(name,price,this);
+};
+
+}
+
+function closeModal(){
+document.getElementById("productModal").style.display = "none";
+}
 </script>
 
 </body>
