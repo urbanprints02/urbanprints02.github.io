@@ -540,6 +540,51 @@ border-radius:50%;
 text-decoration:none;
 box-shadow:0 4px 10px rgba(0,0,0,0.3);
 }
+
+
+
+  
+
+/* ===== LOGO IMAGE ===== */
+.logo{
+  display:flex;
+  align-items:center;
+}
+
+/* Desktop size */
+.logo img{
+  height:55px;
+  width:auto;
+  object-fit:contain;
+  transition:0.3s;
+}
+
+/* Slight hover zoom (premium feel) */
+.logo img:hover{
+  transform:scale(1.05);
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media(max-width:768px){
+
+  .logo img{
+    height:40px;
+  }
+
+  .navbar{
+    padding:10px 15px;
+  }
+
+}
+
+/* Small mobile */
+@media(max-width:480px){
+
+  .logo img{
+    height:34px;
+  }
+
+}
 }
 
 
