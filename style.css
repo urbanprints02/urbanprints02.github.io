@@ -107,23 +107,82 @@ color:red;
   z-index: 1000;
 }
 
-
+/*
 .nav {
   display: flex;
   justify-content: center;
   gap: 20px;
   padding: 12px 24px;
   background: white;
-  color: black;
-
+  color:green;
   top: 0;
   z-index: 1000;
+
+}
+*/
+
+
+/* ================= SECOND MENU ================= */
+.nav{
+  width:100%;
+  background:linear-gradient(90deg, #131921, #232f3e);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:40px;
+  padding:14px 10px;
+
+  top:70px;
+  z-index:998;
+}
+
+.nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:16px;
+  position:relative;
+  padding:6px 10px;
+  transition:.3s;
+}
+
+/* HOVER UNDERLINE EFFECT */
+.nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  width:0%;
+  height:3px;
+  background:white;
+  transition:.3s;
+}
+
+.nav a:hover::after{
+  width:100%;
+}
+
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media(max-width:768px){
+
+
+  .nav{
+
+    display:flex;
+    gap:5px;
+  }
+
+  .nav a{
+    font-size:15px;
+  }
 }
 
 
 
+
 .logo {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 800;
 }
 
@@ -449,8 +508,8 @@ marquee {
   .grid {
     grid-template-columns: repeat(2, 1fr); /* equal size */
     gap: 14px;
-  }
-  
+    }
+
     .site-footer {
   width:100%;
   background: #131921;
@@ -458,6 +517,23 @@ marquee {
   padding: 40px 30px 20px;
   margin-top: 50px;
 }
+  }
+
+
+
+
+/* Small phones – 2 equal cards, no BIG product */
+@media (max-width: 360px) {
+
+    .site-footer {
+  width:100%;
+  background: #131921;
+  color: #ddd;
+  padding: 40px 10px 20px;
+  margin-top: 50px;
+}
+  }
+
 
   .product.big {
     grid-column: span 1;
@@ -511,9 +587,10 @@ marquee {
   .product button {
     margin-top: auto;
   }
+}
 
 
-  
+
 
 .float-whatsapp{
 position:fixed;
@@ -543,8 +620,45 @@ box-shadow:0 4px 10px rgba(0,0,0,0.3);
 
 
 
-  
 
 
+/* ===== LOGO IMAGE ===== */
+.logo{
+  display:flex;
+  align-items:center;
+}
 
+/* Desktop size */
+.logo img{
+  height:55px;
+  width:auto;
+  object-fit:contain;
+  transition:0.3s;
+}
 
+/* Slight hover zoom (premium feel) */
+.logo img:hover{
+  transform:scale(1.05);
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media(max-width:768px){
+
+  .logo img{
+    height:40px;
+  }
+
+  .navbar{
+    padding:10px 15px;
+  }
+
+}
+
+/* Small mobile */
+@media(max-width:480px){
+
+  .logo img{
+    height:34px;
+  }
+
+}
