@@ -213,6 +213,7 @@ marquee {
 }
 
 /* ================= SLIDER ================= */
+/*
 .slider {
   position: relative;
   height: 585px;
@@ -236,6 +237,43 @@ marquee {
   height: 100%;
   object-fit: cover;
   filter: brightness(0.85);
+}
+*/
+
+
+/* ================= SLIDER HERO ================= */
+
+.slider{
+  width:100%;
+  height:100vh;              /* full screen height */
+  position:relative;
+  overflow:hidden;
+}
+
+/* each slide */
+.slide{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  opacity:0;
+  transition:opacity 1s ease-in-out;
+}
+
+/* active slide visible */
+.slide.active{
+  opacity:1;
+  z-index:1;
+}
+
+/* image styling (MOST IMPORTANT PART) */
+.slide img{
+  width:100%;
+  height:100%;
+  object-fit:contain;        /* 👈 shows FULL image without crop */
+  object-position:center;
+  background:#000;           /* gives cinematic look if gap appears */
 }
 
 .caption {
